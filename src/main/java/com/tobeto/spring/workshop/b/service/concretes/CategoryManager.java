@@ -2,7 +2,7 @@ package com.tobeto.spring.workshop.b.service.concretes;
 
 import com.tobeto.spring.workshop.b.module.Category;
 import com.tobeto.spring.workshop.b.repository.abstracts.CategoryRepository;
-import com.tobeto.spring.workshop.b.service.Rules.utilities.BusinessRules;
+import com.tobeto.spring.workshop.b.service.Rules.utilities.CategoryBusinessRules;
 import com.tobeto.spring.workshop.b.service.abstracts.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,10 +11,10 @@ import java.util.List;
 @Service
 public class CategoryManager implements CategoryService {
    public  final CategoryRepository categories;
-   public final BusinessRules businessRules;
+   public final CategoryBusinessRules businessRules;
 
     @Autowired
-    public CategoryManager(CategoryRepository categoryRepository,BusinessRules  businessRules) {
+    public CategoryManager(CategoryRepository categoryRepository, CategoryBusinessRules businessRules) {
         this.categories = categoryRepository;
         this.businessRules = businessRules;
     }

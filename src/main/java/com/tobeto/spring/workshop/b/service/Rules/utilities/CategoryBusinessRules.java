@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @AllArgsConstructor
 @Service
-public class BusinessRules implements IBrandBusinessRules {
+public class CategoryBusinessRules implements ICategoryBusinessRules {
 
     private CategoryRepository categoryRepository;
 
@@ -18,7 +18,9 @@ public class BusinessRules implements IBrandBusinessRules {
     @Override
     public void ifCheckCategoryId(int id) throws Exception {
 
-        Optional<Category> result =  this.categoryRepository.getall().stream().filter(c -> c.getId() == id).findFirst();
+        Optional<Category> result =  this.categoryRepository.getall().stream()
+                .filter(c -> c.getId() == id)
+                .findFirst();
                 if(!result.isEmpty()){
                     throw new Exception("category already exists");
 
@@ -29,7 +31,7 @@ public class BusinessRules implements IBrandBusinessRules {
     @Override
     public void ifCheckCategoryName(String name) throws Exception {
 
-        Optional<Category> result =  this.categoryRepository.getall().stream().filter(c -> c.getName() == name).findFirst();
+        Optional<Category> result =  this.categoryRepository.getall().stream().filter(c -> c.getName().equals( name)).findFirst();
         if(!result.isEmpty()){
             throw new Exception("category already exists");
 
