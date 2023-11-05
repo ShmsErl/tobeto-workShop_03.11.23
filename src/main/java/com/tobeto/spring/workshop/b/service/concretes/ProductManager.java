@@ -34,6 +34,8 @@ public class ProductManager implements ProductService {
     public String add(Product product) {
     this.businessRules.ifCheckProductName(product.getName());
     this.businessRules.ifCheckProductId(product.getId());
+    this.businessRules.ifCheckProductPrice(product.getPrice());
+    this.businessRules.ifCheckProductStock(product.getStock());
        return products.add(product);
     }
 
@@ -46,6 +48,8 @@ public class ProductManager implements ProductService {
     @Override
     public String updateProduct(int id, Product updatedProduct) {
     this.businessRules.ifCheckUpdateProduct(id, updatedProduct);
+    this.businessRules.ifCheckProductPrice(updatedProduct.getPrice());
+    this.businessRules.ifCheckProductStock(updatedProduct.getStock());
         return products.updateProduct(id, updatedProduct);
     }
 }
