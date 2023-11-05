@@ -32,6 +32,10 @@ Since the APIs created provide communication in Json format, Postman was used as
 ### Business Rules
 * ifCheckId()
 * ifCheckName()
+* ifCheckEmail()
+* ifCheckProductPrice()
+* ifCheckProductInStock()
+
 
 ### New Topics Learned 
 * RestController
