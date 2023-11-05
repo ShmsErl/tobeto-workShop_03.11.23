@@ -28,7 +28,7 @@ public class CategoryController {
     }
 
     @PostMapping("/add")
-    public String createCategory(@RequestBody Category category) {
+    public String createCategory(@RequestBody Category category) throws Exception {
         return this.categoryService.add(category);
     }
 
@@ -38,7 +38,7 @@ public class CategoryController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public String deleteCategory(@PathVariable int id) {
+    public String deleteCategory(@PathVariable int id) throws Exception {
         return this.categoryService.delete(id);
     }
 
