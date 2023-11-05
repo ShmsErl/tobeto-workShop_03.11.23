@@ -27,14 +27,13 @@ public class UserManager implements UserService {
     @Override
     public User getById(int id) {
 
-    this.iUserBusinesRules.ifCheckUserId(id);
+    this.iUserBusinesRules.ifCheckDeleteUser(id);
         return users.getById(id);
     }
 
     @Override
     public String add(User user) {
     this.iUserBusinesRules.ifCheckUserId(user.getId());
-    this.iUserBusinesRules.ifCheckUserName(user.getName());
     this.iUserBusinesRules.ifCheckUserEmail(user.getEmail());
         return users.add(user);
     }
