@@ -26,7 +26,7 @@ public class ProductManager implements ProductService {
 
     @Override
     public Product getById(int id) {
-    this.businessRules.ifCheckProductId(id);
+    this.businessRules.ifCheckDeleteProduct(id);
         return products.getById(id);
     }
 
