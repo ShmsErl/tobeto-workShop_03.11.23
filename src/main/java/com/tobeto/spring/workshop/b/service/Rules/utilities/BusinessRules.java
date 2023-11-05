@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @AllArgsConstructor
 @Service
-public class BusinessRules implements com.kodlama.io.rentAcar.business.Rules.utilities.IBrandBusinessRules {
+public class BusinessRules implements IBrandBusinessRules {
 
     private CategoryRepository categoryRepository;
 

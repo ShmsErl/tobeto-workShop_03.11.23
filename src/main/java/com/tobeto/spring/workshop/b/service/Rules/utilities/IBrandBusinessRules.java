@@ -1,4 +1,4 @@
-package com.kodlama.io.rentAcar.business.Rules.utilities;
+package   com.tobeto.spring.workshop.b.service.Rules.utilities;
 
 public interface IBrandBusinessRules {
 
